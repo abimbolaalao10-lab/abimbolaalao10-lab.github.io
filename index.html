@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Abimbola Alao — Computer Science ePortfolio</title>
+<title>Abimbola Alao   Computer Science ePortfolio</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,500&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
@@ -311,8 +311,8 @@ footer p{color:rgba(242,239,233,0.6); font-size:14px; margin:0;}
 
 <header class="hero">
   <div class="wrap">
-    <span class="eyebrow">CS 499 — Computer Science Capstone ePortfolio</span>
-    <h1>I find where the code<br>falls short — then I <em>close the gap</em>, on purpose.</h1>
+    <span class="eyebrow">CS 499   Computer Science Capstone ePortfolio</span>
+    <h1>I find where the code<br>falls short   then I <em>close the gap</em>, on purpose.</h1>
     <p class="lede">
       Three artifacts, each enhanced from coursework into something closer to professional
       practice: a service layer rebuilt around interfaces, the same codebase rebuilt around
@@ -352,30 +352,30 @@ footer p{color:rgba(242,239,233,0.6); font-size:14px; margin:0;}
 <section class="alt">
   <div class="wrap">
     <div class="section-head">
-      <span class="section-num">PROGRAM OUTCOMES — ALL FIVE MET</span>
+      <span class="section-num">PROGRAM OUTCOMES   ALL FIVE MET</span>
       <h2>What this ePortfolio demonstrates</h2>
       <p>Each outcome below traces to specific, citable decisions inside the three artifacts that follow.</p>
     </div>
     <div class="outcomes-grid">
       <div class="outcome-cell">
         <span class="tag">OUTCOME 1</span>
-        <p>Collaborative communication — code review video, milestone narratives, and Javadoc written for mixed audiences.</p>
+        <p>Collaborative communication   code review video, milestone narratives, and Javadoc written for mixed audiences.</p>
       </div>
       <div class="outcome-cell">
         <span class="tag">OUTCOME 2</span>
-        <p>Professional written communication — four milestone narratives plus this self-assessment.</p>
+        <p>Professional written communication   four milestone narratives plus this self-assessment.</p>
       </div>
       <div class="outcome-cell">
         <span class="tag">OUTCOME 3</span>
-        <p>Algorithmic trade-offs — HashMap → LinkedHashMap, O(n) search, O(n log n) sort, all justified in writing.</p>
+        <p>Algorithmic trade-offs   HashMap → LinkedHashMap, O(n) search, O(n log n) sort, all justified in writing.</p>
       </div>
       <div class="outcome-cell">
         <span class="tag">OUTCOME 4</span>
-        <p>Well-founded tools — interfaces, Java Streams, Comparator API, SQLite schema design.</p>
+        <p>Well-founded tools   interfaces, Java Streams, Comparator API, SQLite schema design.</p>
       </div>
       <div class="outcome-cell">
         <span class="tag">OUTCOME 5</span>
-        <p>Security mindset — parameterized queries, foreign-key enforcement, privacy-by-design data retention.</p>
+        <p>Security mindset   parameterized queries, foreign-key enforcement, privacy-by-design data retention.</p>
       </div>
     </div>
   </div>
@@ -385,7 +385,7 @@ footer p{color:rgba(242,239,233,0.6); font-size:14px; margin:0;}
 <section id="review">
   <div class="wrap">
     <div class="section-head">
-      <span class="section-num">00 — STARTING POINT</span>
+      <span class="section-num">00   STARTING POINT</span>
       <h2>Code review</h2>
       <p>A 30-minute walkthrough of all three original artifacts, recorded before any enhancement work began.</p>
     </div>
@@ -393,7 +393,7 @@ footer p{color:rgba(242,239,233,0.6); font-size:14px; margin:0;}
       <div class="review-video">
         <a href="https://drive.google.com/file/d/1ezaNsL0LUJI9jY7f5f6FAAiz6axJ6fDS/view?usp=drive_link" target="_blank" rel="noopener">
           <div class="play-icon"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
-          <span class="label">Watch on Google Drive — 30 min</span>
+          <span class="label">Watch on Google Drive   30 min</span>
         </a>
       </div>
       <div class="review-text">
@@ -415,7 +415,7 @@ footer p{color:rgba(242,239,233,0.6); font-size:14px; margin:0;}
 <section class="alt" id="design">
   <div class="wrap">
     <div class="section-head">
-      <span class="section-num">01 — SOFTWARE DESIGN &amp; ENGINEERING</span>
+      <span class="section-num">01   SOFTWARE DESIGN &amp; ENGINEERING</span>
       <h2>Contact, Task &amp; Appointment Services</h2>
       <p>A Java service layer from CS 320, rebuilt around interfaces, logging, and consistent validation.</p>
     </div>
@@ -434,15 +434,15 @@ footer p{color:rgba(242,239,233,0.6); font-size:14px; margin:0;}
       </div>
       <div class="artifact-body">
         <p>
-          The original implementation worked — tests passed — but had no service interfaces,
+          The original implementation worked   tests passed   but had no service interfaces,
           no logging, an incomplete CRUD surface on <span class="mono">AppointmentService</span>,
           and inconsistent null-handling between modules. The enhancement closes each gap and
           documents why, not just what.
         </p>
         <ul class="enh-list">
-          <li><span class="mono">IContactService / ITaskService / IAppointmentService</span> added — callers depend on a contract, not an implementation</li>
+          <li><span class="mono">IContactService / ITaskService / IAppointmentService</span> added   callers depend on a contract, not an implementation</li>
           <li><span class="mono">java.util.logging</span> added across all three services for a real audit trail</li>
-          <li><span class="mono">AppointmentService</span> CRUD completed — date and description updates were missing entirely</li>
+          <li><span class="mono">AppointmentService</span> CRUD completed   date and description updates were missing entirely</li>
           <li>Null-checking and error handling standardized into a shared <span class="mono">requireX()</span> pattern</li>
           <li>Full Javadoc on every class, method, and field</li>
           <li>Test suite expanded with boundary values, null inputs, and non-existent-ID cases</li>
@@ -456,9 +456,9 @@ footer p{color:rgba(242,239,233,0.6); font-size:14px; margin:0;}
 <section id="algorithms">
   <div class="wrap">
     <div class="section-head">
-      <span class="section-num">02 — ALGORITHMS &amp; DATA STRUCTURES</span>
+      <span class="section-num">02   ALGORITHMS &amp; DATA STRUCTURES</span>
       <h2>Same codebase, rebuilt around how data moves</h2>
-      <p>The storage layer gains order, search, and sort — each with its complexity documented in writing.</p>
+      <p>The storage layer gains order, search, and sort   each with its complexity documented in writing.</p>
     </div>
 
     <div class="artifact">
@@ -475,15 +475,15 @@ footer p{color:rgba(242,239,233,0.6); font-size:14px; margin:0;}
       </div>
       <div class="artifact-body">
         <p>
-          A plain <span class="mono">HashMap</span> gives fast lookup by ID and nothing else —
+          A plain <span class="mono">HashMap</span> gives fast lookup by ID and nothing else  
           no predictable order, no way to search by name, no way to sort. The enhancement
           replaces it with a structure and a set of methods fit for how the data is actually used.
         </p>
         <ul class="enh-list">
-          <li><span class="mono">HashMap → LinkedHashMap</span> — preserves insertion order at the same O(1) cost</li>
-          <li><span class="mono">getAllContacts() / getAllTasks() / getAllAppointments()</span> — O(n) full retrieval</li>
-          <li><span class="mono">searchByName() / searchByDescription()</span> — O(n) Stream filter, case-insensitive</li>
-          <li><span class="mono">sortByLastName() / sortByName() / sortByDate()</span> — O(n log n) Comparator sort, original map never mutated</li>
+          <li><span class="mono">HashMap → LinkedHashMap</span>   preserves insertion order at the same O(1) cost</li>
+          <li><span class="mono">getAllContacts() / getAllTasks() / getAllAppointments()</span>   O(n) full retrieval</li>
+          <li><span class="mono">searchByName() / searchByDescription()</span>   O(n) Stream filter, case-insensitive</li>
+          <li><span class="mono">sortByLastName() / sortByName() / sortByDate()</span>   O(n log n) Comparator sort, original map never mutated</li>
           <li>Two-level comparator (last name, then first name) for deterministic tie-breaking</li>
           <li>Tests confirm sorting never disturbs the underlying insertion order</li>
         </ul>
@@ -496,7 +496,7 @@ footer p{color:rgba(242,239,233,0.6); font-size:14px; margin:0;}
 <section class="alt" id="databases">
   <div class="wrap">
     <div class="section-head">
-      <span class="section-num">03 — DATABASES</span>
+      <span class="section-num">03   DATABASES</span>
       <h2>Phishing Email Detector</h2>
       <p>A 99.74%-accuracy Random Forest classifier, rebuilt around a database it never had.</p>
     </div>
@@ -506,7 +506,7 @@ footer p{color:rgba(242,239,233,0.6); font-size:14px; margin:0;}
         <div>
           <span class="cat">Python · Gradio · SQLite</span>
           <h3>From stateless prediction to an auditable system</h3>
-          <div class="sub">Originally a postgraduate research project — no persistence layer at all</div>
+          <div class="sub">Originally a postgraduate research project   no persistence layer at all</div>
         </div>
         <div class="artifact-links">
           <a class="chip" href="artifacts/milestone4-code.zip">Original + enhanced code (.zip)</a>
@@ -515,17 +515,17 @@ footer p{color:rgba(242,239,233,0.6); font-size:14px; margin:0;}
       </div>
       <div class="artifact-body">
         <p>
-          The original app analyzed an email and forgot it the instant the result was shown —
+          The original app analyzed an email and forgot it the instant the result was shown  
           no history, no audit trail, no way for a user to flag a wrong prediction. For a
           security tool, that gap is not cosmetic. The enhancement adds a small, carefully
           scoped SQLite layer to close it.
         </p>
         <ul class="enh-list">
-          <li><span class="mono">predictions</span> table — every analysis logged with timestamp, result, confidence, indicators</li>
-          <li><span class="mono">feedback</span> table — foreign key to predictions, <span class="mono">ON DELETE CASCADE</span></li>
-          <li>Every query parameterized — including the <span class="mono">LIMIT</span> clause, a detail that's easy to miss</li>
-          <li><span class="mono">PRAGMA foreign_keys = ON</span> set per connection — SQLite disables this by default</li>
-          <li>Only a 300-character snippet of each email stored — privacy-by-design, not full content</li>
+          <li><span class="mono">predictions</span> table   every analysis logged with timestamp, result, confidence, indicators</li>
+          <li><span class="mono">feedback</span> table   foreign key to predictions, <span class="mono">ON DELETE CASCADE</span></li>
+          <li>Every query parameterized   including the <span class="mono">LIMIT</span> clause, a detail that's easy to miss</li>
+          <li><span class="mono">PRAGMA foreign_keys = ON</span> set per connection   SQLite disables this by default</li>
+          <li>Only a 300-character snippet of each email stored   privacy-by-design, not full content</li>
           <li>New <em>Submit Feedback</em> and <em>Prediction History</em> tabs added to the Gradio UI</li>
         </ul>
       </div>
@@ -550,12 +550,12 @@ footer p{color:rgba(242,239,233,0.6); font-size:14px; margin:0;}
         <div><span class="k">next</span> &nbsp;Backend / platform engineering roles</div>
       </div>
       <div class="about-text">
-        <p>"The three artifacts here were not built to showcase isolated skills — they were chosen
+        <p>"The three artifacts here were not built to showcase isolated skills   they were chosen
         because together they tell one honest story."</p>
         <p>
           Each artifact in this ePortfolio started as code that worked but fell short of a
           professional standard in a specific, identifiable way. The value I tried to demonstrate
-          isn't that I can write code — it's that I can look critically at code I already
+          isn't that I can write code   it's that I can look critically at code I already
           submitted for a grade, name exactly where it falls short, and close that gap with a
           decision I can defend in writing: why <span class="mono">LinkedHashMap</span> instead
           of <span class="mono">HashMap</span>, why SQLite instead of a heavier database, why a
@@ -563,7 +563,7 @@ footer p{color:rgba(242,239,233,0.6); font-size:14px; margin:0;}
           index structure.
         </p>
         <p>
-          That instinct — find the gap, justify the fix, document the trade-off — is the same one
+          That instinct   find the gap, justify the fix, document the trade-off   is the same one
           I bring to independent work outside the classroom: a decentralized auction platform on
           Base, a Telegram-controlled NFT minting bot with an on-chain eligibility engine, and a
           property-rental platform built for the Nigerian market. It's the kind of engineering I
@@ -581,7 +581,7 @@ footer p{color:rgba(242,239,233,0.6); font-size:14px; margin:0;}
   <div class="wrap">
     <div>
       <h3>Abimbola Alao</h3>
-      <p>CS 499 — Computer Science Capstone · Southern New Hampshire University</p>
+      <p>CS 499   Computer Science Capstone · Southern New Hampshire University</p>
     </div>
     <div class="footer-links">
       <a href="mailto:abimbola.alao-hugley@snhu.edu">Email</a>
