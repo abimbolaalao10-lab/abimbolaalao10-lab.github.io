@@ -1,2 +1,595 @@
-<h1>My CS 499 ePortfolio</h1>
-<p>Welcome! This portfolio showcases my Computer Science work at SNHU.</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Abimbola Alao — Computer Science ePortfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,500&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+
+:root{
+  --navy:#0B1929;
+  --navy-soft:#142536;
+  --cream:#F2EFE9;
+  --cream-dim:#E7E2D8;
+  --amber:#C9893B;
+  --amber-soft:#E0AD6E;
+  --slate:#5A6B7A;
+  --green:#3D7A5C;
+  --line:rgba(11,25,41,0.12);
+  --line-dark:rgba(242,239,233,0.14);
+  --max:1080px;
+}
+
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  margin:0;
+  background:var(--cream);
+  color:var(--navy);
+  font-family:'Inter',sans-serif;
+  font-size:17px;
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+}
+
+h1,h2,h3{
+  font-family:'Newsreader',serif;
+  font-weight:600;
+  margin:0;
+  color:var(--navy);
+  letter-spacing:-0.01em;
+}
+
+.mono{
+  font-family:'IBM Plex Mono',monospace;
+}
+
+a{color:inherit;}
+
+.wrap{
+  max-width:var(--max);
+  margin:0 auto;
+  padding:0 28px;
+}
+
+/* ---------- NAV ---------- */
+nav{
+  position:sticky; top:0; z-index:50;
+  background:rgba(242,239,233,0.92);
+  backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--line);
+}
+nav .wrap{
+  display:flex; align-items:center; justify-content:space-between;
+  height:64px;
+}
+.nav-name{
+  font-family:'Newsreader',serif; font-weight:600; font-size:19px;
+}
+.nav-links{
+  display:flex; gap:28px; list-style:none; margin:0; padding:0;
+}
+.nav-links a{
+  text-decoration:none; font-size:14px; font-weight:500;
+  color:var(--slate); letter-spacing:0.02em;
+  font-family:'IBM Plex Mono',monospace;
+  transition:color .15s;
+}
+.nav-links a:hover{color:var(--amber);}
+.nav-toggle{display:none;}
+@media(max-width:720px){
+  .nav-links{display:none;}
+}
+
+/* ---------- HERO ---------- */
+.hero{
+  padding:96px 0 80px;
+  position:relative;
+  overflow:hidden;
+}
+.hero::before{
+  content:"";
+  position:absolute; top:-200px; right:-160px;
+  width:480px; height:480px;
+  background:radial-gradient(circle, rgba(201,137,59,0.16), transparent 70%);
+  pointer-events:none;
+}
+.eyebrow{
+  font-family:'IBM Plex Mono',monospace;
+  font-size:13px; letter-spacing:0.08em; text-transform:uppercase;
+  color:var(--amber); font-weight:600; margin-bottom:18px;
+  display:flex; align-items:center; gap:10px;
+}
+.eyebrow::before{
+  content:""; width:24px; height:1px; background:var(--amber);
+}
+.hero h1{
+  font-size:56px; line-height:1.08; max-width:780px;
+  margin-bottom:24px;
+}
+.hero h1 em{
+  font-style:italic; color:var(--amber); font-weight:500;
+}
+.hero p.lede{
+  font-size:19px; color:var(--slate); max-width:600px; margin-bottom:36px;
+}
+.hero-actions{display:flex; gap:14px; flex-wrap:wrap;}
+.btn{
+  display:inline-flex; align-items:center; gap:8px;
+  padding:13px 24px; border-radius:3px;
+  font-family:'IBM Plex Mono',monospace; font-size:14px; font-weight:500;
+  text-decoration:none; border:1px solid transparent; transition:all .15s;
+}
+.btn-primary{background:var(--navy); color:var(--cream);}
+.btn-primary:hover{background:var(--navy-soft);}
+.btn-ghost{border-color:var(--navy); color:var(--navy);}
+.btn-ghost:hover{background:var(--navy); color:var(--cream);}
+
+@media(max-width:720px){
+  .hero h1{font-size:38px;}
+}
+
+/* ---------- DIFF SIGNATURE BLOCK ---------- */
+.diff-card{
+  margin-top:64px;
+  background:var(--navy);
+  border-radius:6px;
+  overflow:hidden;
+  box-shadow:0 24px 60px -20px rgba(11,25,41,0.35);
+}
+.diff-head{
+  display:flex; justify-content:space-between; align-items:center;
+  padding:14px 22px; border-bottom:1px solid var(--line-dark);
+}
+.diff-head span{
+  font-family:'IBM Plex Mono',monospace; font-size:12px; color:var(--cream-dim);
+  opacity:0.65;
+}
+.diff-dots{display:flex; gap:6px;}
+.diff-dots i{width:9px; height:9px; border-radius:50%; background:rgba(242,239,233,0.25); display:block;}
+.diff-body{
+  font-family:'IBM Plex Mono',monospace; font-size:13.5px; line-height:1.9;
+  padding:22px 0;
+}
+.diff-line{padding:1px 22px; white-space:pre; overflow-x:auto;}
+.diff-line.minus{background:rgba(201,80,60,0.14); color:#E2A89E;}
+.diff-line.plus{background:rgba(61,122,92,0.18); color:#9FCDB2;}
+.diff-line.ctx{color:rgba(242,239,233,0.5);}
+.diff-line .marker{display:inline-block; width:18px; opacity:0.8;}
+
+/* ---------- SECTION SHELL ---------- */
+section{padding:90px 0;}
+section.alt{background:var(--cream-dim);}
+.section-head{margin-bottom:52px; max-width:640px;}
+.section-num{
+  font-family:'IBM Plex Mono',monospace; font-size:13px; color:var(--amber);
+  letter-spacing:0.06em; margin-bottom:10px; display:block;
+}
+.section-head h2{font-size:34px; margin-bottom:14px;}
+.section-head p{color:var(--slate); font-size:16.5px;}
+
+/* ---------- OUTCOMES GRID ---------- */
+.outcomes-grid{
+  display:grid; grid-template-columns:repeat(5,1fr); gap:1px;
+  background:var(--line); border:1px solid var(--line);
+}
+.outcome-cell{
+  background:var(--cream); padding:26px 20px; text-align:left;
+}
+.outcome-cell .tag{
+  font-family:'IBM Plex Mono',monospace; font-size:11px; color:var(--green);
+  font-weight:600; letter-spacing:0.04em; margin-bottom:10px; display:block;
+}
+.outcome-cell p{font-size:13.5px; color:var(--navy); margin:0; line-height:1.5;}
+@media(max-width:900px){
+  .outcomes-grid{grid-template-columns:repeat(2,1fr);}
+}
+@media(max-width:560px){
+  .outcomes-grid{grid-template-columns:1fr;}
+}
+
+/* ---------- CODE REVIEW BLOCK ---------- */
+.review-block{
+  display:grid; grid-template-columns:1.1fr 0.9fr; gap:48px; align-items:center;
+}
+.review-video{
+  background:var(--navy); border-radius:8px; aspect-ratio:16/9;
+  display:flex; align-items:center; justify-content:center;
+  position:relative; overflow:hidden;
+}
+.review-video a{
+  width:100%; height:100%; display:flex; flex-direction:column;
+  align-items:center; justify-content:center; gap:14px;
+  text-decoration:none; color:var(--cream);
+}
+.play-icon{
+  width:60px; height:60px; border-radius:50%;
+  background:var(--amber); display:flex; align-items:center; justify-content:center;
+  transition:transform .2s;
+}
+.review-video a:hover .play-icon{transform:scale(1.08);}
+.play-icon svg{width:20px; height:20px; fill:var(--navy); margin-left:2px;}
+.review-video .label{font-family:'IBM Plex Mono',monospace; font-size:13px; opacity:0.7;}
+.review-text h3{font-size:24px; margin-bottom:14px;}
+.review-text p{color:var(--slate); margin-bottom:14px;}
+.review-text ul{padding-left:20px; color:var(--slate); margin:0;}
+.review-text li{margin-bottom:6px;}
+@media(max-width:780px){
+  .review-block{grid-template-columns:1fr;}
+}
+
+/* ---------- ARTIFACT CARDS ---------- */
+.artifact{
+  border:1px solid var(--line); border-radius:8px; background:var(--cream);
+  margin-bottom:28px; overflow:hidden;
+}
+.artifact-head{
+  padding:28px 32px; display:flex; justify-content:space-between;
+  align-items:flex-start; gap:24px; flex-wrap:wrap;
+  border-bottom:1px solid var(--line);
+}
+.artifact-head .cat{
+  font-family:'IBM Plex Mono',monospace; font-size:12px; color:var(--amber);
+  letter-spacing:0.06em; text-transform:uppercase; font-weight:600; margin-bottom:8px; display:block;
+}
+.artifact-head h3{font-size:26px;}
+.artifact-head .sub{color:var(--slate); font-size:15px; margin-top:6px;}
+.artifact-links{display:flex; gap:10px; flex-wrap:wrap;}
+.chip{
+  font-family:'IBM Plex Mono',monospace; font-size:12.5px;
+  padding:8px 14px; border-radius:20px; border:1px solid var(--navy);
+  text-decoration:none; color:var(--navy); white-space:nowrap;
+  transition:all .15s;
+}
+.chip:hover{background:var(--navy); color:var(--cream);}
+.artifact-body{padding:28px 32px;}
+.artifact-body p{color:var(--navy); margin:0 0 16px;}
+.artifact-body p:last-child{margin-bottom:0;}
+.enh-list{
+  display:grid; grid-template-columns:repeat(2,1fr); gap:10px 24px;
+  margin-top:18px; padding:0; list-style:none;
+}
+.enh-list li{
+  font-size:14.5px; color:var(--slate); padding-left:18px; position:relative;
+}
+.enh-list li::before{
+  content:"→"; position:absolute; left:0; color:var(--green); font-weight:600;
+}
+@media(max-width:600px){
+  .enh-list{grid-template-columns:1fr;}
+  .artifact-head{padding:22px;}
+  .artifact-body{padding:22px;}
+}
+
+/* ---------- ABOUT / SELF-ASSESSMENT TEASER ---------- */
+.about-grid{display:grid; grid-template-columns:0.85fr 1.15fr; gap:56px; align-items:start;}
+.about-mono{
+  font-family:'IBM Plex Mono',monospace; font-size:13.5px; color:var(--slate);
+  background:var(--cream-dim); border:1px solid var(--line); border-radius:6px;
+  padding:24px; line-height:2;
+}
+.about-mono .k{color:var(--amber);}
+.about-text p{margin-bottom:16px; color:var(--navy);}
+.about-text p:first-of-type{font-size:19px; font-family:'Newsreader',serif; font-style:italic; color:var(--navy-soft);}
+@media(max-width:780px){
+  .about-grid{grid-template-columns:1fr;}
+}
+
+/* ---------- FOOTER ---------- */
+footer{
+  background:var(--navy); color:var(--cream); padding:56px 0 36px;
+}
+footer .wrap{display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap:24px;}
+footer h3{color:var(--cream); font-size:22px; margin-bottom:8px;}
+footer p{color:rgba(242,239,233,0.6); font-size:14px; margin:0;}
+.footer-links{display:flex; gap:22px; flex-wrap:wrap;}
+.footer-links a{
+  font-family:'IBM Plex Mono',monospace; font-size:13.5px;
+  text-decoration:none; color:rgba(242,239,233,0.75);
+  border-bottom:1px solid transparent;
+}
+.footer-links a:hover{color:var(--amber-soft); border-color:var(--amber-soft);}
+
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <div class="nav-name">Abimbola Alao</div>
+    <ul class="nav-links">
+      <li><a href="#review">Code Review</a></li>
+      <li><a href="#design">Design</a></li>
+      <li><a href="#algorithms">Algorithms</a></li>
+      <li><a href="#databases">Databases</a></li>
+      <li><a href="#about">Self-Assessment</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="eyebrow">CS 499 — Computer Science Capstone ePortfolio</span>
+    <h1>I find where the code<br>falls short — then I <em>close the gap</em>, on purpose.</h1>
+    <p class="lede">
+      Three artifacts, each enhanced from coursework into something closer to professional
+      practice: a service layer rebuilt around interfaces, the same codebase rebuilt around
+      better algorithms, and a machine learning app rebuilt around a real database. Every
+      change is documented with the reasoning behind it, not just the result.
+    </p>
+    <div class="hero-actions">
+      <a href="#review" class="btn btn-primary">Watch the code review →</a>
+      <a href="self-assessment.html" class="btn btn-ghost">Read self-assessment</a>
+    </div>
+
+    <div class="diff-card">
+      <div class="diff-head">
+        <span class="mono">AppointmentService.java</span>
+        <div class="diff-dots"><i></i><i></i><i></i></div>
+      </div>
+      <div class="diff-body">
+<div class="diff-line ctx"><span class="marker"> </span>public class AppointmentService {</div>
+<div class="diff-line minus"><span class="marker">-</span>    public void deleteAppointment(String id) {</div>
+<div class="diff-line minus"><span class="marker">-</span>        appointments.remove(id);  // no validation, no log</div>
+<div class="diff-line minus"><span class="marker">-</span>    }</div>
+<div class="diff-line plus"><span class="marker">+</span>    public void deleteAppointment(String appointmentId) {</div>
+<div class="diff-line plus"><span class="marker">+</span>        if (appointmentId == null || !appointments.containsKey(appointmentId)) {</div>
+<div class="diff-line plus"><span class="marker">+</span>            LOGGER.warning("deleteAppointment failed: not found.");</div>
+<div class="diff-line plus"><span class="marker">+</span>            throw new IllegalArgumentException("Appointment ID not found: " + appointmentId);</div>
+<div class="diff-line plus"><span class="marker">+</span>        }</div>
+<div class="diff-line plus"><span class="marker">+</span>        appointments.remove(appointmentId);</div>
+<div class="diff-line plus"><span class="marker">+</span>        LOGGER.info("Appointment deleted. ID='" + appointmentId + "'.");</div>
+<div class="diff-line plus"><span class="marker">+</span>    }</div>
+<div class="diff-line ctx"><span class="marker"> </span>}</div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- COURSE OUTCOMES -->
+<section class="alt">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="section-num">PROGRAM OUTCOMES — ALL FIVE MET</span>
+      <h2>What this ePortfolio demonstrates</h2>
+      <p>Each outcome below traces to specific, citable decisions inside the three artifacts that follow.</p>
+    </div>
+    <div class="outcomes-grid">
+      <div class="outcome-cell">
+        <span class="tag">OUTCOME 1</span>
+        <p>Collaborative communication — code review video, milestone narratives, and Javadoc written for mixed audiences.</p>
+      </div>
+      <div class="outcome-cell">
+        <span class="tag">OUTCOME 2</span>
+        <p>Professional written communication — four milestone narratives plus this self-assessment.</p>
+      </div>
+      <div class="outcome-cell">
+        <span class="tag">OUTCOME 3</span>
+        <p>Algorithmic trade-offs — HashMap → LinkedHashMap, O(n) search, O(n log n) sort, all justified in writing.</p>
+      </div>
+      <div class="outcome-cell">
+        <span class="tag">OUTCOME 4</span>
+        <p>Well-founded tools — interfaces, Java Streams, Comparator API, SQLite schema design.</p>
+      </div>
+      <div class="outcome-cell">
+        <span class="tag">OUTCOME 5</span>
+        <p>Security mindset — parameterized queries, foreign-key enforcement, privacy-by-design data retention.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CODE REVIEW -->
+<section id="review">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="section-num">00 — STARTING POINT</span>
+      <h2>Code review</h2>
+      <p>A 30-minute walkthrough of all three original artifacts, recorded before any enhancement work began.</p>
+    </div>
+    <div class="review-block">
+      <div class="review-video">
+        <a href="https://drive.google.com/file/d/1ezaNsL0LUJI9jY7f5f6FAAiz6axJ6fDS/view?usp=drive_link" target="_blank" rel="noopener">
+          <div class="play-icon"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+          <span class="label">Watch on Google Drive — 30 min</span>
+        </a>
+      </div>
+      <div class="review-text">
+        <h3>What the review covers</h3>
+        <p>For each of the three artifact categories, the review walks through what the original
+        code does, analyzes it against a code-review checklist, and states a concrete enhancement
+        plan before any code is changed.</p>
+        <ul>
+          <li>Software design weaknesses: no interfaces, no logging, inconsistent error handling</li>
+          <li>Algorithmic weaknesses: HashMap with no search, sort, or ordered iteration</li>
+          <li>Database gap: a fully stateless ML application with no persistence at all</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ARTIFACT 1: SOFTWARE DESIGN -->
+<section class="alt" id="design">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="section-num">01 — SOFTWARE DESIGN &amp; ENGINEERING</span>
+      <h2>Contact, Task &amp; Appointment Services</h2>
+      <p>A Java service layer from CS 320, rebuilt around interfaces, logging, and consistent validation.</p>
+    </div>
+
+    <div class="artifact">
+      <div class="artifact-head">
+        <div>
+          <span class="cat">Java · JUnit 5</span>
+          <h3>Three services, one consistent contract</h3>
+          <div class="sub">Originally built for CS 320: Software Testing, Automation, and Quality Assurance</div>
+        </div>
+        <div class="artifact-links">
+          <a class="chip" href="artifacts/milestone2-code.zip">Original + enhanced code (.zip)</a>
+          <a class="chip" href="narratives/Milestone2_Narrative.docx">Narrative (.docx)</a>
+        </div>
+      </div>
+      <div class="artifact-body">
+        <p>
+          The original implementation worked — tests passed — but had no service interfaces,
+          no logging, an incomplete CRUD surface on <span class="mono">AppointmentService</span>,
+          and inconsistent null-handling between modules. The enhancement closes each gap and
+          documents why, not just what.
+        </p>
+        <ul class="enh-list">
+          <li><span class="mono">IContactService / ITaskService / IAppointmentService</span> added — callers depend on a contract, not an implementation</li>
+          <li><span class="mono">java.util.logging</span> added across all three services for a real audit trail</li>
+          <li><span class="mono">AppointmentService</span> CRUD completed — date and description updates were missing entirely</li>
+          <li>Null-checking and error handling standardized into a shared <span class="mono">requireX()</span> pattern</li>
+          <li>Full Javadoc on every class, method, and field</li>
+          <li>Test suite expanded with boundary values, null inputs, and non-existent-ID cases</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ARTIFACT 2: ALGORITHMS -->
+<section id="algorithms">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="section-num">02 — ALGORITHMS &amp; DATA STRUCTURES</span>
+      <h2>Same codebase, rebuilt around how data moves</h2>
+      <p>The storage layer gains order, search, and sort — each with its complexity documented in writing.</p>
+    </div>
+
+    <div class="artifact">
+      <div class="artifact-head">
+        <div>
+          <span class="cat">Java · Streams · Comparator</span>
+          <h3>From key-lookup-only to a real query surface</h3>
+          <div class="sub">Builds on the Milestone Two enhancement of the same CS 320 project</div>
+        </div>
+        <div class="artifact-links">
+          <a class="chip" href="artifacts/milestone3-code.zip">Original + enhanced code (.zip)</a>
+          <a class="chip" href="narratives/Milestone3_Narrative.docx">Narrative (.docx)</a>
+        </div>
+      </div>
+      <div class="artifact-body">
+        <p>
+          A plain <span class="mono">HashMap</span> gives fast lookup by ID and nothing else —
+          no predictable order, no way to search by name, no way to sort. The enhancement
+          replaces it with a structure and a set of methods fit for how the data is actually used.
+        </p>
+        <ul class="enh-list">
+          <li><span class="mono">HashMap → LinkedHashMap</span> — preserves insertion order at the same O(1) cost</li>
+          <li><span class="mono">getAllContacts() / getAllTasks() / getAllAppointments()</span> — O(n) full retrieval</li>
+          <li><span class="mono">searchByName() / searchByDescription()</span> — O(n) Stream filter, case-insensitive</li>
+          <li><span class="mono">sortByLastName() / sortByName() / sortByDate()</span> — O(n log n) Comparator sort, original map never mutated</li>
+          <li>Two-level comparator (last name, then first name) for deterministic tie-breaking</li>
+          <li>Tests confirm sorting never disturbs the underlying insertion order</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ARTIFACT 3: DATABASES -->
+<section class="alt" id="databases">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="section-num">03 — DATABASES</span>
+      <h2>Phishing Email Detector</h2>
+      <p>A 99.74%-accuracy Random Forest classifier, rebuilt around a database it never had.</p>
+    </div>
+
+    <div class="artifact">
+      <div class="artifact-head">
+        <div>
+          <span class="cat">Python · Gradio · SQLite</span>
+          <h3>From stateless prediction to an auditable system</h3>
+          <div class="sub">Originally a postgraduate research project — no persistence layer at all</div>
+        </div>
+        <div class="artifact-links">
+          <a class="chip" href="artifacts/milestone4-code.zip">Original + enhanced code (.zip)</a>
+          <a class="chip" href="narratives/Milestone4_Narrative.docx">Narrative (.docx)</a>
+        </div>
+      </div>
+      <div class="artifact-body">
+        <p>
+          The original app analyzed an email and forgot it the instant the result was shown —
+          no history, no audit trail, no way for a user to flag a wrong prediction. For a
+          security tool, that gap is not cosmetic. The enhancement adds a small, carefully
+          scoped SQLite layer to close it.
+        </p>
+        <ul class="enh-list">
+          <li><span class="mono">predictions</span> table — every analysis logged with timestamp, result, confidence, indicators</li>
+          <li><span class="mono">feedback</span> table — foreign key to predictions, <span class="mono">ON DELETE CASCADE</span></li>
+          <li>Every query parameterized — including the <span class="mono">LIMIT</span> clause, a detail that's easy to miss</li>
+          <li><span class="mono">PRAGMA foreign_keys = ON</span> set per connection — SQLite disables this by default</li>
+          <li>Only a 300-character snippet of each email stored — privacy-by-design, not full content</li>
+          <li>New <em>Submit Feedback</em> and <em>Prediction History</em> tabs added to the Gradio UI</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT / SELF-ASSESSMENT -->
+<section id="about">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="section-num">PROFESSIONAL SELF-ASSESSMENT</span>
+      <h2>Why these three artifacts, together</h2>
+    </div>
+    <div class="about-grid">
+      <div class="about-mono">
+        <div><span class="k">name</span> &nbsp;Abimbola Alao</div>
+        <div><span class="k">focus</span> &nbsp;Backend engineering, system design, API development</div>
+        <div><span class="k">stack</span> &nbsp;Java, Python, JavaScript, React, Node.js</div>
+        <div><span class="k">also_building</span> &nbsp;AstaVerse (decentralized auctions, Base)</div>
+        <div><span class="k">learning</span> &nbsp;Self-directed cybersecurity track</div>
+        <div><span class="k">next</span> &nbsp;Backend / platform engineering roles</div>
+      </div>
+      <div class="about-text">
+        <p>"The three artifacts here were not built to showcase isolated skills — they were chosen
+        because together they tell one honest story."</p>
+        <p>
+          Each artifact in this ePortfolio started as code that worked but fell short of a
+          professional standard in a specific, identifiable way. The value I tried to demonstrate
+          isn't that I can write code — it's that I can look critically at code I already
+          submitted for a grade, name exactly where it falls short, and close that gap with a
+          decision I can defend in writing: why <span class="mono">LinkedHashMap</span> instead
+          of <span class="mono">HashMap</span>, why SQLite instead of a heavier database, why a
+          linear scan is the right search strategy at this scale instead of a more "impressive"
+          index structure.
+        </p>
+        <p>
+          That instinct — find the gap, justify the fix, document the trade-off — is the same one
+          I bring to independent work outside the classroom: a decentralized auction platform on
+          Base, a Telegram-controlled NFT minting bot with an on-chain eligibility engine, and a
+          property-rental platform built for the Nigerian market. It's the kind of engineering I
+          want to keep doing professionally.
+        </p>
+        <p>
+          <a href="self-assessment.html" class="btn btn-ghost" style="margin-top:8px;">Read the full self-assessment →</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <h3>Abimbola Alao</h3>
+      <p>CS 499 — Computer Science Capstone · Southern New Hampshire University</p>
+    </div>
+    <div class="footer-links">
+      <a href="mailto:abimbola.alao-hugley@snhu.edu">Email</a>
+      <a href="https://github.com/abimbolaalao10-lab/abimbolaalao-lab.github.io" target="_blank" rel="noopener">GitHub</a>
+
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
